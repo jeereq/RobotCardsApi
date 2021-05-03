@@ -1,0 +1,129 @@
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: "SEGA LOGO FONT";
+	font-style: normal;
+	font-weight: normal;
+	src: local("SEGA LOGO FONT"), url("SEGA.woff") format("woff");
+}
+#root {
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(
+		-45deg,
+		rgba(7, 27, 82, 1),
+		rgba(0, 128, 128, 1)
+	);
+}
+header {
+	text-align: center;
+	font-family: "SEGA LOGO FONT";
+	font-size: 1.5em;
+	color: green;
+	padding: 30px;
+}
+h1 {
+	font-weight: 200;
+	color: #0ccac4;
+}
+form {
+	width: 100%;
+	text-align: center;
+}
+
+input {
+	color: white;
+	width: 20%;
+	height: 50px;
+	padding: 5px;
+	background: none;
+	border: 1px solid #0ccac4;
+	border-radius: 5px;
+}
+input:focus {
+	background: #0ccac454;
+}
+input::placeholder {
+	color: white;
+}
+.cards {
+	width: 100%;
+	padding: 30px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	perspective: 500px;
+}
+
+.card,
+.data {
+	border-radius: 5px;
+	height: auto;
+	width: auto;
+	max-width: 300px;
+	margin: 10px;
+	padding: 5px;
+	background: #0ccac4;
+	transition: 0.5s;
+}
+
+@keyframes scale {
+	to {
+		transform: rotateY(0);
+	}
+	from {
+		transform: rotatey(180deg);
+	}
+}
+.image {
+	width: 100%;
+	text-align: center;
+}
+.name,
+.website,
+.phone,
+.username,
+.company,
+.adress {
+	padding: 10px;
+	text-align: center;
+	font-weight: bold;
+}
+.email {
+	padding: 5px;
+	text-align: center;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.tourner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	content: "";
+	border-right: 5px solid red;
+	border-radius: 50%;
+	animation-name: tourne;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	transform: translate(-50%, -50%);
+}
+@keyframes tourne {
+	to {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	from {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
